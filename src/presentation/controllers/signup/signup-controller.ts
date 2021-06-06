@@ -9,5 +9,11 @@ export class SignUpController implements Controller {
         body: new Error('email')
       }
     }
+    if (!httpRequest.body.name) {
+      return {
+        statusCode: 400,
+        body: new Error('name')
+      }
+    }
   }
 }
