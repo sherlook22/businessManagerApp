@@ -1,8 +1,12 @@
 import { SignUpController } from './signup-controller'
 
+const makeSut = (): SignUpController => {
+  return new SignUpController()
+}
+
 describe('SignUpController', () => {
   test('Should return 400 is no email is provided', async () => {
-    const sut = new SignUpController()
+    const sut = makeSut()
     const httpRequest = {
       body: {
         name: 'name',
@@ -17,7 +21,7 @@ describe('SignUpController', () => {
   })
 
   test('Should return 400 is no name is provided', async () => {
-    const sut = new SignUpController()
+    const sut = makeSut()
     const httpRequest = {
       body: {
         email: 'any_name',
@@ -32,7 +36,7 @@ describe('SignUpController', () => {
   })
 
   test('Should return 400 is no lastName is provided', async () => {
-    const sut = new SignUpController()
+    const sut = makeSut()
     const httpRequest = {
       body: {
         name: 'name',
@@ -47,7 +51,7 @@ describe('SignUpController', () => {
   })
 
   test('Should return 400 is no pasword is provided', async () => {
-    const sut = new SignUpController()
+    const sut = makeSut()
     const httpRequest = {
       body: {
         name: 'name',
@@ -62,7 +66,7 @@ describe('SignUpController', () => {
   })
 
   test('Should return 400 is no paswordConfirmation is provided', async () => {
-    const sut = new SignUpController()
+    const sut = makeSut()
     const httpRequest = {
       body: {
         name: 'name',
