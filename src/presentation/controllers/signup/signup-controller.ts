@@ -22,5 +22,12 @@ export class SignUpController implements Controller {
         body: new Error('lastName')
       }
     }
+
+    if (!httpRequest.body.password) {
+      return {
+        statusCode: 400,
+        body: new Error('password')
+      }
+    }
   }
 }
